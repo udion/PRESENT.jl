@@ -11,7 +11,7 @@ In julia prompt do Pkg.clone("https://github.com/udion/PRESENT.jl")
 The module provides two functions : <br>
 * PRESENTenc(::String, ::String)
 * PRESENTdec(::String, ::String)
-both functions take 2 input paprameters the first one being the **key** and second one as **inputState**.<br>
+<br> both functions take 2 input paprameters the first one being the **key** and second one as **inputState**.<br>
 Both the input are expected to be in hexadecimal format (**without 0x**), also since PRESENT is designed to be used on
 64-bits state, in the hexadecimal format the string length of 16 well acommodates the possible domains for input.
 
@@ -23,9 +23,9 @@ decrypted = PRESENTdec(k_master,encrypted)
 ```
 
 ```
-julia>encrypted<br>
+julia>encrypted <br>
 "b376caacdcb790e7"
 
-julia>decrypted<br>
+julia>decrypted <br>
 "00000006789ffaed"
 ```
