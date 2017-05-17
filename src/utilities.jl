@@ -34,6 +34,17 @@ function sLayer(state)
     end
     state = new_state
 end
+#invsLayer consists of 16 S-boxes in parallel (at the same layer)
+#and has the S-boxes in this layer has inverse mapping of the S-boxes in sLayer
+function invsLayer(state)
+  new_state = ""
+  for i in 4:4:64
+      new_nibble = invS_box[state[i-3:i]]
+      #join appends the strings inside array
+      new_state = join([new_state,new_nibble])
+  end
+  state = new_state
+end
 
 #definition of the pLayer(state)
 function pLayer(state)
@@ -44,15 +55,15 @@ function pLayer(state)
     end
     state = join(newStateArray)
 end
-
-#definition of the invP operation
-function invP(state)
-    l = length(state)
-    newStateArray = fill('0',l)
-    for i in 1:l
-        newStateArray[invP_box[l-i]+1] = state[l-i+1]
-    end
-    state = join(newStateArray)
+#definition of the invpLayer, it maps the bits position in the manner
+#which is inverse of what is present in the pLayer
+function invpLayer(state)
+  l = length(state)
+  newStateArray = fill('0',l)
+  for i in 1:l
+      newStateArray[invP_box[l-i]+1] = state[l-i+1]
+  end
+  state = join(newStateArray)
 end
 
 #generic function to rotate the string by the given index
