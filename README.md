@@ -15,17 +15,17 @@ both functions take 2 input paprameters the first one being the **key** and seco
 Both the input are expected to be in hexadecimal format (**without 0x**), also since PRESENT is designed to be used on
 64-bits state, in the hexadecimal format the string length of 16 well acommodates the possible domains for input.
 
-'''
+```
 k_master = "ff1234abc"
 input = "6789ffaed"
 encrypted = PRESENTenc(k_master,input)
 decrypted = PRESENTdec(k_master,encrypted)
-'''
+```
 
-'''
-julia>encrypted
+```
+julia>encrypted<br>
 "b376caacdcb790e7"
 
-julia>decrypted
+julia>decrypted<br>
 "00000006789ffaed"
-'''
+```
