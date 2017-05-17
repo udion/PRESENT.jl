@@ -23,9 +23,9 @@ decrypted = PRESENTdec(k_master,encrypted)
 ```
 
 ```
-julia>encrypted <br>
+julia>encrypted
 "b376caacdcb790e7"
 
-julia>decrypted <br>
+julia>decrypted
 "00000006789ffaed"
 ```
