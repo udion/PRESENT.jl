@@ -17,6 +17,8 @@ include("utilities.jl")
 #each rounds data will be stored in roundData type
 #the input key and the state is expected in the hexadecimal
 #hexadecimal starting WITHOUT "0x"
+#since the the proposed design is used to encrypt/decrypt 64bits at a times
+#the hexadecimal version of inputs will be well acoomodated in 16 units of length
 function PRESENTenc(K, inp)
     rounds = 31
     k_seed  = hex2bin(K,80)
