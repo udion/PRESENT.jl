@@ -16,6 +16,7 @@ Both the input are expected to be in hexadecimal format (**without 0x**), also s
 64-bits state, in the hexadecimal format the string length of 16 well acommodates the possible domains for input.
 
 ```
+using PRESENT
 k_master = "ff1234abc"
 input = "6789ffaed"
 encrypted = PRESENTenc(k_master,input)
